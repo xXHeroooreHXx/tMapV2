@@ -6,7 +6,7 @@
 
 class tSala {
 public:
-	int tileSet[21] [21];
+	int tileMap[22] [22];
 	int norte, oeste, sur, este, id;
 	tSala(int _norte, int _oeste, int _sur, int _este);
 	tSala(int puertaEntrada);
@@ -14,7 +14,6 @@ public:
     void printTileSet();
 private:
     int tileRow[10];
-    void generateRow();
     void generateTileSet();
     
 };

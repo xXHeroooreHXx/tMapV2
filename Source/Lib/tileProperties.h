@@ -1,3 +1,4 @@
+
 #include "tTile.h"
 class tileProperties{
 	tTile tiles[] = {
