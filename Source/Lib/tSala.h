@@ -8,9 +8,8 @@ class tSala {
 public:
 	int tileMap[22] [22];
 	int norte, oeste, sur, este, id;
-	tSala(int _norte, int _oeste, int _sur, int _este);
-	tSala(int puertaEntrada);
 	tSala();
+	tSala(int id);
     void printTileSet();
 private:
     int tileRow[10];

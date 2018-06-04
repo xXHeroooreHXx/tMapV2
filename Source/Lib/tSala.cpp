@@ -4,59 +4,9 @@
 #include <ctime>
 
 using namespace std;
-tSala::tSala(int _norte, int _oeste, int _sur, int _este) :norte(_norte), oeste(_oeste), sur(_sur), este(_este)
-{
-	srand(unsigned(time(0)));
-	id = rand() % 50 + 1;
-	generateTileSet();
-
+tSala::tSala(int id){
+	id = id;
 }
-
-tSala::tSala(int puertaEntrada /*0 -> norte, 1 - > oeste,2->sur, 3->este */) {
-	norte = 0;
-	sur = 0;
-	este = 0;
-	oeste = 0;
-	srand((unsigned)time(0));
-	switch (puertaEntrada) {
-		case 0:
-				while(oeste + sur + este == 0) {
-					if ((oeste = rand() % 3) == 2) oeste = oeste / 2;
-					if ((sur = rand() % 3) == 2) sur = sur / 2;
-					if ((este = rand() % 3) == 2) este = este / 2;
-				}
-				norte = 2;
-			break;
-		case 1:
-			while (norte + sur + este == 0) {
-				if ((norte = rand() % 3)==2) norte=norte/2;
-				if ((sur = rand() % 3)==2) sur = sur /2;
-				if ((este = rand() % 3)==2) este = este /2;
-			}
-			oeste = 2;
-			break;
-		case 2:
-			while (norte + oeste + este == 0) {
-				if ((norte = rand() % 3) == 2) norte = norte / 2;
-				if ((oeste = rand() % 3) == 2) oeste = oeste / 2;	
-				if ((este = rand() % 3) == 2) este = este / 2;
-			}
-			sur = 2;
-			break;
-		case 3:
-			while (norte + oeste + sur == 0) {
-				if ((norte = rand() % 3) == 2) norte = norte / 2;
-				if ((sur = rand() % 3) == 2) sur = sur / 2;
-				if ((oeste = rand() % 3) == 2) oeste = oeste / 2;
-			}
-			este = 2;
-			break;
-	}
-		generateTileSet();
-
-
-}
-
 
 tSala::tSala() 
 {

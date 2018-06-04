@@ -6,7 +6,7 @@
 #include <ctime>
 class tMap {
 public:
-	tSala *pLocation,*norte,*sur,*este,*oeste;
+	tSala *pLocation,*norte = NULL,*sur = NULL,*este= NULL,*oeste=NULL;
 	tMap();
 	void irNorte();
 	void irSur();

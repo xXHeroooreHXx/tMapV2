@@ -43,6 +43,7 @@ int main()
 			mapa.irOeste();
 		if(IsKeyDown(KEY_DOWN))
 			mapa.irSur();
+			
         BeginDrawing();
 			for (int i = 0; i <=21;i++){
 				for (int j = 0 ; j <=21; j++){
