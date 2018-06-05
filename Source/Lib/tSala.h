@@ -6,7 +6,7 @@
 
 class tSala {
 public:
-	int tileMap[22] [22];
+	int tileMap[23] [23];
 	int id;
 	bool norte, oeste, sur, este; 
 	tSala();

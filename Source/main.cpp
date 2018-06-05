@@ -25,8 +25,8 @@ int main()
 {
     // Initialization
     //--------------------------------------------------------------------------------------
-    int screenWidth = 21*32;
-    int screenHeight = 21*32;
+    int screenWidth = 22*32;
+    int screenHeight = 22*32;
     tMap mapa = tMap();    
     InitWindow(screenWidth, screenHeight, "tMap Test");
     SetTargetFPS(60);
@@ -36,33 +36,37 @@ int main()
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
         if(IsKeyDown(KEY_UP)){
-			mapa.irNorte();
-	        ClearBackground(BLACK);
-}
+			mapa.ir(0);
+			ClearBackground(BLACK);
+			
+		}
 		if(IsKeyDown(KEY_RIGHT)){
-			mapa.irEste();
+			mapa.ir(2);
 			ClearBackground(BLACK);
-}
+			
+		}
 		if(IsKeyDown(KEY_LEFT)){
-			mapa.irOeste();
+			mapa.ir(3);
 			ClearBackground(BLACK);
-}
+			
+		}	
 		if(IsKeyDown(KEY_DOWN)){
-			mapa.irSur();
+			mapa.ir(1);
 			ClearBackground(BLACK);
-}
+			
+		}
         BeginDrawing();
 			for (int i = 0; i <=21;i++){
 				for (int j = 0 ; j <=21; j++){
-					if(mapa.pLocation.tileMap[i][j] == 0)
+					if(mapa.playerLocation.tileMap[i][j] == 0)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,BLACK);
-					if(mapa.pLocation.tileMap[i][j] == 1)
+					if(mapa.playerLocation.tileMap[i][j] == 1)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,GREEN);
-					if(mapa.pLocation.tileMap[i][j] == 2)
+					if(mapa.playerLocation.tileMap[i][j] == 2)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,RED);
-					if(mapa.pLocation.tileMap[i][j] == 3)
+					if(mapa.playerLocation.tileMap[i][j] == 3)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,PURPLE);
-					if(mapa.pLocation.tileMap[i][j] == 4)
+					if(mapa.playerLocation.tileMap[i][j] == 4)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,BLUE);
 			}
 		}
