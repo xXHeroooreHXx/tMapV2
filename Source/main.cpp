@@ -35,27 +35,34 @@ int main()
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
-        if(IsKeyDown(KEY_UP))
+        if(IsKeyDown(KEY_UP)){
 			mapa.irNorte();
-		if(IsKeyDown(KEY_RIGHT))
+	        ClearBackground(BLACK);
+}
+		if(IsKeyDown(KEY_RIGHT)){
 			mapa.irEste();
-		if(IsKeyDown(KEY_LEFT))
+			ClearBackground(BLACK);
+}
+		if(IsKeyDown(KEY_LEFT)){
 			mapa.irOeste();
-		if(IsKeyDown(KEY_DOWN))
+			ClearBackground(BLACK);
+}
+		if(IsKeyDown(KEY_DOWN)){
 			mapa.irSur();
-			
+			ClearBackground(BLACK);
+}
         BeginDrawing();
 			for (int i = 0; i <=21;i++){
 				for (int j = 0 ; j <=21; j++){
-					if(mapa.pLocation->tileMap[i][j] == 0)
+					if(mapa.pLocation.tileMap[i][j] == 0)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,BLACK);
-					if(mapa.pLocation->tileMap[i][j] == 1)
+					if(mapa.pLocation.tileMap[i][j] == 1)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,GREEN);
-					if(mapa.pLocation->tileMap[i][j] == 2)
+					if(mapa.pLocation.tileMap[i][j] == 2)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,RED);
-					if(mapa.pLocation->tileMap[i][j] == 3)
+					if(mapa.pLocation.tileMap[i][j] == 3)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,PURPLE);
-					if(mapa.pLocation->tileMap[i][j] == 4)
+					if(mapa.pLocation.tileMap[i][j] == 4)
 						DrawRectangle(1*(i*32),1*(j*32),32,32,BLUE);
 			}
 		}

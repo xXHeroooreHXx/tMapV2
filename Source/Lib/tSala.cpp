@@ -10,19 +10,18 @@ tSala::tSala(int id){
 
 tSala::tSala() 
 {
-	norte = 0;
-	sur = 0;
-	este = 0;
-	oeste = 0;
-	srand(unsigned(time(0)));
+	norte = true;
+	sur = true;
+	este = true;
+	oeste = true;
 	id = rand() % 50 + 1;
-		while (norte + oeste + sur + este == 0) {
-			if ((norte = rand() % 3) == 2) norte = norte / 2;
-			if ((sur = rand() % 3) == 2) sur = sur / 2;
-			if ((oeste = rand() % 3) == 2) oeste = oeste / 2;
-			if ((este = rand() % 3) == 2) este = este / 2;
+		while ((norte && oeste) || (sur && este)) {
+			norte = (rand() % 3 == 1);
+			oeste = (rand() % 3 == 1);
+			sur = (rand() % 3 == 1);
+			este = (rand() % 3 == 1);
+
 		}
-	generateTileSet();
 
 
 }
@@ -47,15 +46,18 @@ void tSala::generateTileSet(){
        }
    }
     }
-    if(this->norte == 1)
-        tileMap[10][0] = 4; //ID correcto 500
-    if(this->sur == 1)
-        tileMap[10][21] = 4; //Id correcto 499
-    if(this ->este == 1)
+    if(norte == false){
+        tileMap[10][0] = 4;
+        } //ID correcto 500
+    if(sur == false){
+        tileMap[10][20] = 4; //Id correcto 499
+    }
+    if(este == false){
         tileMap[0][10] = 4; //ID correcto 498
-    if(this -> oeste == 1)
-        tileMap[21][10] = 4; //ID correcto 497
-
+    }
+    if(oeste == false){
+        tileMap[20][10] = 4; //ID correcto 497
+	}
     
 }
 

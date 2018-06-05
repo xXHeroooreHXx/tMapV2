@@ -7,13 +7,15 @@
 class tSala {
 public:
 	int tileMap[22] [22];
-	int norte, oeste, sur, este, id;
+	int id;
+	bool norte, oeste, sur, este; 
 	tSala();
 	tSala(int id);
     void printTileSet();
-private:
-    int tileRow[10];
     void generateTileSet();
+private:
+   
+    
     
 };
 #endif // !T_SALA
